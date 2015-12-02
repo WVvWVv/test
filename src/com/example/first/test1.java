@@ -3,42 +3,39 @@ package com.example.first;
 /**
  * Created by aurora on 12/1/15.
  */
-
 import java.util.Scanner;
-
 public class test1 {
 
-  public static void main(String[] args) {
-
-    /**
-     * Everything that can be final -- must be final.
-     */
-
-    final Scanner in = new Scanner(System.in);
-    System.out.printf("Enter i:  ");
-
-    // incorrect input isn't handled
-    final int i = in.nextInt();
-    System.out.println(i);
+  public static String estimateScore(int i){
     final String str;
-
-    /**
-     * if block processes sequentially, from top to bottom
-     * after first true block it doesn't process anything else
-     */
-    if (i >= 0 && i < 60) {
+    if(i>=0 && i<=59)
+    {
       str = "F";
-    } else if (i < 70) {
+    }else if(i>=60 && i<=69)
+    {
       str = "D";
-    } else if (i < 80) {
+    }else if(i>=70 && i<=79)
+    {
       str = "C";
-    } else if (i < 90) {
+    }else if(i>=80 && i<=89)
+    {
       str = "B";
-    } else if (i <= 100) {
+    }else if(i>=90 && i<=100)
+    {
       str = "A";
-    } else {
-      str = "Estimate is not correct";
+    }else throw new RuntimeException();
+    return str;
+  }
+
+  public static void main(String[] args) {
+    try{
+      final Scanner in = new Scanner(System.in);
+      System.out.printf("Enter i:  ");
+      final int i = in.nextInt();
+      String s =estimateScore(i);
+      System.out.print(s);
+    }catch (Exception e){
+      System.out.println("Error");
     }
-    System.out.println(str);
   }
 }
