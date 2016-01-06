@@ -19,7 +19,7 @@ public class test1 {
    * @see <a href="https://answers.yahoo.com/question/index?qid=20080227174743AASIGmG"> more
    * info</a>
    */
-  private /*public*/ static String estimateScore(int i) {
+  private static String estimateScore(int i) {
     final String str;
     if (i < 0 || i > 100) {
       /**
