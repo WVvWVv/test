@@ -33,6 +33,7 @@ public class test4 {
         pancakes.put(i, j);
       }
 
+
       for (Integer pan : pancakes.keySet()) {
         System.out.println(pan + "," + pancakes.get(pan));
       }
