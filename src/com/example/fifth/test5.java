@@ -17,10 +17,19 @@ public class test5 {
             System.out.println("Choose way");
             final Scanner choose = new Scanner(System.in);
             final int j = choose.nextInt();
-            switch (j){
-                case 1: userGuess();break;
-                case 2: computerGuess();break;
-                default: System.out.println("Error"); break;
+            switch(j) {
+                case 1:
+                    userGuess();
+                    break;
+                case 2:
+                    computerGuess();
+                    break;
+                case 3:
+                    computerGuessSeven();
+                    break;
+                default:
+                    System.out.println("Error");
+                    break;
             }
         } catch (InputMismatchException e) {
             System.out.println(
@@ -28,17 +37,13 @@ public class test5 {
                             (e.getMessage() != null ? " " + e.getMessage() : ""));
         }
     }
-    /**
-     * как то очень длинные функции получились
-     * как их сократить
-     * в основном из за однотипных отлавливаний ошибок *
-     * */
-    private static int userGuess() {
+
+    private static void userGuess() {
         try {
             Random rand = new Random();
             final int computerNumber = rand.nextInt((MAX - MIN) + 1) + MIN;
             System.out.println("Guess the number");
-            int i = 0, userNumber = 0; //как то уж очень криво
+            int i = 0, userNumber = 0;
             while (userNumber!= computerNumber) {
                 final Scanner in = new Scanner(System.in);
                 userNumber = in.nextInt();
@@ -60,10 +65,9 @@ public class test5 {
                     "Failed to parse int." +
                             (e.getMessage() != null ? " " + e.getMessage() : ""));
         }
-        return 1;
     }
 
-    private static int computerGuess() {
+    private static void computerGuess() {
         try {
             System.out.println("Enter your number(1..100)");
             final Scanner in = new Scanner(System.in);
@@ -71,7 +75,7 @@ public class test5 {
             int computerNumber=0;
             Random rand = new Random();
             int i=0;
-            while(userNumber!=computerNumber) {
+            while(userNumber !=computerNumber) {
                 computerNumber = rand.nextInt((MAX - MIN) + 1) + MIN;
                 if(userNumber==computerNumber)
                     System.out.println("Congratulations!");
@@ -93,6 +97,36 @@ public class test5 {
                     "Failed to parse int." +
                             (e.getMessage() != null ? " " + e.getMessage() : ""));
         }
-        return 1;
+    }
+
+    private static void computerGuessSeven() {
+        try {
+            System.out.println("Enter your number(1..100)");
+            final Scanner in = new Scanner(System.in);
+            final int userNumber = in.nextInt();
+            int computerNumber=0;
+            int i=0;
+            while(userNumber !=computerNumber) {
+                computerNumber=(MAX + MIN) >> 1;
+                if(userNumber==computerNumber)
+                    System.out.println("Congratulations!");
+                else if(userNumber<computerNumber)
+                {
+                    System.out.printf("%d too high\n",computerNumber);
+                    MAX=computerNumber-1;
+                }
+                else if(userNumber>computerNumber)
+                {
+                    System.out.printf("%d too low\n",computerNumber);
+                    MIN = computerNumber+1;
+                }
+                i++;
+            }
+            System.out.printf("Computer spent %d times guessing", i);
+        } catch (InputMismatchException e) {
+            System.out.println(
+                    "Failed to parse int." +
+                            (e.getMessage() != null ? " " + e.getMessage() : ""));
+        }
     }
 }
