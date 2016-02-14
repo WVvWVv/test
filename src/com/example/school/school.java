@@ -5,39 +5,39 @@ package com.example.school;
  * Date: 2/13/16
  */
 
-interface Staff{
+interface Staff {
 
 }
 
-interface Ministers extends Staff{
+interface Ministers extends Staff {
 
 }
 
-class SportMinister implements Ministers{
+class SportMinister implements Ministers {
 
 }
 
-class EducationMinister implements Ministers{
+class EducationMinister implements Ministers {
 
 }
 
-class Director implements Staff{
+class Director implements Staff {
 
 }
 
-interface HeadTeacher extends Staff{
+interface HeadTeacher extends Staff {
 
 }
 
-class MainHeadTeacher implements HeadTeacher{
+class MainHeadTeacher implements HeadTeacher {
 
 }
 
-class DeputyHeadTeacher implements HeadTeacher{
+class DeputyHeadTeacher implements HeadTeacher {
 
 }
 
-class EducationHeadTeacher implements HeadTeacher{
+class EducationHeadTeacher implements HeadTeacher {
 
 }
 
@@ -45,75 +45,75 @@ interface Teachers extends Staff {
 
 }
 
-class SeniorTeacher implements Teachers{
+class SeniorTeacher implements Teachers {
 
 }
 
-class DutyTeacher implements Teachers{
+class DutyTeacher implements Teachers {
 
 }
 
-interface GeographyTeachers extends Teachers{
+interface GeographyTeachers extends Teachers {
 
 }
 
-class GeographyTeacher1 implements GeographyTeachers{
+class GeographyTeacher1 implements GeographyTeachers {
 
 }
 
-class GeographyTeacher2 implements GeographyTeachers{
+class GeographyTeacher2 implements GeographyTeachers {
 
 }
 
-class GeographyTeacher3 implements GeographyTeachers{
+class GeographyTeacher3 implements GeographyTeachers {
 
 }
 
-interface PhysicsTeachers extends Teachers{
+interface PhysicsTeachers extends Teachers {
 
 }
 
-class PhpsicsTeacher1 implements PhysicsTeachers{
+class PhpsicsTeacher1 implements PhysicsTeachers {
 
 }
 
-class PhpsicsTeacher2 implements PhysicsTeachers{
+class PhpsicsTeacher2 implements PhysicsTeachers {
 
 }
 
-class PhpsicsTeacher3 implements PhysicsTeachers{
+class PhpsicsTeacher3 implements PhysicsTeachers {
 
 }
 
-interface MathTeachers extends Teachers{
+interface MathTeachers extends Teachers {
 
 }
 
-class MathTeacher1 implements MathTeachers{
+class MathTeacher1 implements MathTeachers {
 
 }
 
-class MathTeacher2 implements MathTeachers{
+class MathTeacher2 implements MathTeachers {
 
 }
 
-interface ComputerScienсeTeachers extends Teachers{
+interface ComputerScienсeTeachers extends Teachers {
 
 }
 
-interface RussianLanguageAndLiteratureTeachers extends Teachers{
+interface RussianLanguageAndLiteratureTeachers extends Teachers {
 
 }
 
-class RussianLanguageAndLiteratureTeacher implements RussianLanguageAndLiteratureTeachers{
+class RussianLanguageAndLiteratureTeacher implements RussianLanguageAndLiteratureTeachers {
 
 }
 
-interface UkrainianLanguageAndLiteratureTeachers extends Teachers{
+interface UkrainianLanguageAndLiteratureTeachers extends Teachers {
 
 }
 
-class UkrainianLanguageAndLiteratureTeacher implements UkrainianLanguageAndLiteratureTeachers{
+class UkrainianLanguageAndLiteratureTeacher implements UkrainianLanguageAndLiteratureTeachers {
 
 }
 
@@ -125,21 +125,27 @@ class MathPhysicsTeacher2 implements MathTeachers, PhysicsTeachers {
 
 }
 
-class MathCompSienceTeacher implements MathTeachers, ComputerScienсeTeachers{
+class MathCompSienceTeacher implements MathTeachers, ComputerScienсeTeachers {
 
 }
 
-interface Pupils extends Staff{
+class MathPhysicCompScienceTeacher implements MathTeachers, PhysicsTeachers, ComputerScienсeTeachers {
 
 }
 
-
-interface PresidentOfSchool extends Pupils{
+class RussianUkrainianLanguage implements RussianLanguageAndLiteratureTeachers, UkrainianLanguageAndLiteratureTeachers{
 
 }
 
+interface Pupils extends Staff {
 
-class CurrentPresidentOfSchool implements PresidentOfSchool{
+}
+
+interface PresidentOfSchool extends Pupils {
+
+}
+
+class CurrentPresidentOfSchool implements PresidentOfSchool {
 
 }
 
@@ -151,15 +157,23 @@ class AllPupils implements Pupils {
 
 }
 
-class Prefect1 implements Pupils {
+interface Prefects extends Pupils{
 
 }
 
-class Prefect2 implements Pupils {
+class Prefect1 implements Prefects {
 
 }
 
-class Prefect3 implements Pupils {
+class Prefect2 implements Prefects {
+
+}
+
+class Prefect3 implements Prefects {
+
+}
+
+class DeputyPrefect implements Prefects {
 
 }
 
